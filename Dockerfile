@@ -9,7 +9,8 @@ ENV TZ=Asia/Kolkata
 
 RUN apt-get -qq update \
     && apt-get install -y software-properties-common \
-    && apt-get -qq install -y python3 python3-pip
+    && apt-get -qq install -y python3 python3-pip \
+    && apt-get install wget
 
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
